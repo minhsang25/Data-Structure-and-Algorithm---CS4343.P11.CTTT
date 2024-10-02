@@ -50,6 +50,7 @@ public:
 };
 
 int main() {
+    cout<<"SId: 22521240\nFullname: Le Minh Sang\nHomework - Lab 1";
     int timeToLive;
     cout << "Nhập thời gian sống của token (TTL): ";
     cin >> timeToLive;
