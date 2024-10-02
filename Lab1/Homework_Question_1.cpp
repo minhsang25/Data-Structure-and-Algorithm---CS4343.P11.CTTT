@@ -99,6 +99,7 @@ public:
 };
 
 int main() {
+    cout<<"SId: 22521240\nFullname: Le Minh Sang\nHomework - Lab 1";
     MusicPlayer player;
     int n;
     cin >> n;
