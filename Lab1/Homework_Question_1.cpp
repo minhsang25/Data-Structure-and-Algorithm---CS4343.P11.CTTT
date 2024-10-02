@@ -18,7 +18,7 @@ private:
 public:
     MusicPlayer() : head(nullptr), current(nullptr) {}
 
-    // Add a song to the end of the playlist
+    // Thêm bài hát vào cuối danh sách phát
     void addSong(string songName) {
         Node* newSong = new Node(songName);
         if (!head) {
@@ -35,21 +35,23 @@ public:
         }
     }
 
-    // Play next song (loop back to the first song if at the end)
+    // Chuyển sang bài hát tiếp theo và hiển thị
     void playNext() {
         if (current) {
             current = current->next;
+            cout << current->song << endl;  // Hiển thị bài hát hiện tại sau khi chuyển
         }
     }
 
-    // Play previous song (loop back to the last song if at the beginning)
+    // Chuyển sang bài hát trước đó và hiển thị
     void playPrev() {
         if (current) {
             current = current->prev;
+            cout << current->song << endl;  // Hiển thị bài hát hiện tại sau khi chuyển
         }
     }
 
-    // Remove a song by its name
+    // Xóa một bài hát theo tên
     void removeSong(string songName) {
         if (!head) return;
 
@@ -57,13 +59,13 @@ public:
         do {
             if (temp->song == songName) {
                 if (temp == head && temp->next == head) {
-                    // Only one song in the list
+                    // Trường hợp chỉ có một bài hát trong danh sách
                     delete temp;
                     head = nullptr;
                     current = nullptr;
                     return;
                 } else {
-                    // Remove the song
+                    // Xóa bài hát
                     Node* prevNode = temp->prev;
                     Node* nextNode = temp->next;
                     prevNode->next = nextNode;
@@ -80,7 +82,7 @@ public:
         } while (temp != head);
     }
 
-    // Display the current playlist
+    // Hiển thị danh sách phát hiện tại
     void displayPlaylist() {
         if (!head) {
             cout << "Playlist is empty" << endl;
