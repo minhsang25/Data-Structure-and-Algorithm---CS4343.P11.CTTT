@@ -11,11 +11,15 @@ struct Node {
 class Stack {
 private:
     Node* top;
+    int maxSize;  // Stack limit
+    int currentSize;  // Current number of elements
 
 public:
-    // Constructor to initialize the stack
-    Stack() {
+    // Constructor to initialize the stack with a max size
+    Stack(int size) {
         top = nullptr;
+        maxSize = size;
+        currentSize = 0;
     }
 
     // Function to check if the stack is empty
@@ -23,12 +27,23 @@ public:
         return top == nullptr;
     }
 
+    // Function to check if the stack is full
+    bool isFull() {
+        return currentSize == maxSize;
+    }
+
     // Function to push an element onto the stack
     void push(int value) {
+        if (isFull()) {
+            cout << "Stack is full." << endl;
+            return;
+        }
         Node* newNode = new Node();
         newNode->data = value;
         newNode->next = top;
         top = newNode;
+        currentSize++;
+        cout << value << " pushed to stack." << endl;
     }
 
     // Function to pop an element from the stack
@@ -41,6 +56,7 @@ public:
         int value = top->data;
         top = top->next;
         delete temp;
+        currentSize--;
         return value;
     }
 
@@ -65,15 +81,21 @@ public:
 
 // Main menu for stack operations
 int main() {
-    Stack stack;
-    int choice, value;
+    int maxSize, choice, value;
+
+    // Ask user for the stack's maximum size
+    cout << "Enter the maximum size of the stack: ";
+    cin >> maxSize;
+
+    Stack stack(maxSize);  // Initialize stack with max size
 
     do {
         cout << "\nMenu: \n";
         cout << "1. Push\n";
         cout << "2. Pop\n";
-        cout << "3. Peek\n";
+        cout << "3. Peek (Print top element)\n";
         cout << "4. Is Empty?\n";
+        cout << "5. Is Full?\n";
         cout << "0. Exit\n";
         cout << "Enter your choice: ";
         cin >> choice;
@@ -92,6 +114,9 @@ int main() {
                 break;
             case 4:
                 cout << (stack.isEmpty() ? "Stack is empty." : "Stack is not empty.") << endl;
+                break;
+            case 5:
+                cout << (stack.isFull() ? "Stack is full." : "Stack is not full.") << endl;
                 break;
         }
     } while (choice != 0);
