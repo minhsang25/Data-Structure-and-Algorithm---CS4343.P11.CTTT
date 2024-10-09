@@ -12,11 +12,15 @@ class Queue {
 private:
     Node* front;
     Node* rear;
+    int maxSize;    // Maximum size of the queue
+    int currentSize; // Current number of elements in the queue
 
 public:
-    // Constructor to initialize the queue
-    Queue() {
+    // Constructor to initialize the queue with a maximum size
+    Queue(int size) {
         front = rear = nullptr;
+        maxSize = size;
+        currentSize = 0;
     }
 
     // Function to check if the queue is empty
@@ -24,8 +28,17 @@ public:
         return front == nullptr;
     }
 
+    // Function to check if the queue is full
+    bool isFull() {
+        return currentSize == maxSize;
+    }
+
     // Function to enqueue an element into the queue
     void enqueue(int value) {
+        if (isFull()) {
+            cout << "Queue is full." << endl;
+            return;
+        }
         Node* newNode = new Node();
         newNode->data = value;
         newNode->next = nullptr;
@@ -35,6 +48,7 @@ public:
             rear->next = newNode;
             rear = newNode;
         }
+        currentSize++;
     }
 
     // Function to dequeue an element from the queue
@@ -50,6 +64,7 @@ public:
             rear = nullptr;  // If the queue is now empty, set rear to nullptr
         }
         delete temp;
+        currentSize--;
         return value;
     }
 
@@ -66,8 +81,13 @@ public:
 
 // Main menu for queue operations
 int main() {
-    Queue queue;
-    int choice, value;
+    int maxSize, choice, value;
+
+    // Ask user for the queue's maximum size
+    cout << "Enter the maximum size of the queue: ";
+    cin >> maxSize;
+
+    Queue queue(maxSize);  // Initialize queue with max size
 
     do {
         cout << "\nMenu: \n";
@@ -75,6 +95,7 @@ int main() {
         cout << "2. Dequeue\n";
         cout << "3. Print Front and Rear\n";
         cout << "4. Is Empty?\n";
+        cout << "5. Is Full?\n";
         cout << "0. Exit\n";
         cout << "Enter your choice: ";
         cin >> choice;
@@ -93,6 +114,9 @@ int main() {
                 break;
             case 4:
                 cout << (queue.isEmpty() ? "Queue is empty." : "Queue is not empty.") << endl;
+                break;
+            case 5:
+                cout << (queue.isFull() ? "Queue is full." : "Queue is not full.") << endl;
                 break;
         }
     } while (choice != 0);
