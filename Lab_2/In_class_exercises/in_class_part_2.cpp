@@ -1,3 +1,7 @@
+//SId: 22521240
+//Fullname: Le Minh Sang
+//In-Class Exercise - Lab 2 - Part 2
+
 #include <iostream>
 using namespace std;
 
@@ -81,6 +85,7 @@ public:
 
 // Main menu for queue operations
 int main() {
+    cout<<"SId: 22521240\nFullname: Le Minh Sang\nHomework - Lab 2 - Question 1\n";
     int maxSize, choice, value;
 
     // Ask user for the queue's maximum size

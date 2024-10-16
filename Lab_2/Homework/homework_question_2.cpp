@@ -1,3 +1,7 @@
+//SId: 22521240
+//Fullname: Le Minh Sang
+//Homework - Lab 2 - Question 2
+
 #include <iostream>
 #include <stack>
 #include <string>
@@ -54,6 +58,7 @@ private:
 
 int main()
 {
+    cout<<"SId: 22521240\nFullname: Le Minh Sang\nHomework - Lab 2 - Question 1\n";
     Browser browser;
     string command, url;
 

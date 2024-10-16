@@ -1,3 +1,7 @@
+//SId: 22521240
+//Fullname: Le Minh Sang
+//Homework - Lab 2 - Question 3
+
 #include <iostream>
 #include <vector>
 #include <stack>
@@ -25,6 +29,7 @@ vector<int> canSeePeople(const vector<int>& heights) {
 }
 
 int main() {
+    cout<<"SId: 22521240\nFullname: Le Minh Sang\nHomework - Lab 2 - Question 1\n";
     int n;
     cout << "Enter the number of people: ";
     cin >> n;

@@ -1,3 +1,7 @@
+//SId: 22521240
+//Fullname: Le Minh Sang
+//Homework - Lab 2 - Question 1
+
 #include <iostream>
 using namespace std;
 class TowerOfHanoi
@@ -65,6 +69,7 @@ private:
 
 int main()
 {
+    cout<<"SId: 22521240\nFullname: Le Minh Sang\nHomework - Lab 2 - Question 1\n";
     int num_disks = 3; // Change this value for different numbers of disks
     TowerOfHanoi hanoi(num_disks);
     hanoi.start();
