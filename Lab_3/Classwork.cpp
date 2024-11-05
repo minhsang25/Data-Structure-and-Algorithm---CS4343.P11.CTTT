@@ -1,4 +1,6 @@
-// Pham Thi Minh Hien - 22520422
+//SId: 22521240
+//Fullname: Le Minh Sang
+//In-Class Exercise - Lab 3
 
 #include <iostream>
 #include <string>
