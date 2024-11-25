@@ -1,3 +1,7 @@
+//SId: 22521240
+//Fullname: Le Minh Sang
+//In-Class Exercise - Lab 4 - question 1
+
 // Implement each sorting algorithm to sort a list containing 1K random integers. Measure the execution time and compare the performance of the algorithms
 // Each sorting algorithm including buble sort, selection sort, insertion sort, binary insertion sort, quick sort, merge sort, heap sort
 
