@@ -1,6 +1,6 @@
 //SId: 22521240
 //Fullname: Le Minh Sang
-//In-Class Exercise - Lab 4 - question 1
+//In-Class Exercise - Lab 4 - question 2
 
 #include <iostream>
 #include <chrono>
