@@ -1,3 +1,6 @@
+//STT: 25
+//Full name: Le Minh Sang
+
 #include <iostream>
 #include <vector>
 #include <queue>
